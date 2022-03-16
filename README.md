@@ -10,3 +10,5 @@ Tavallista tekstiä.
 
 [komentorivi](https://github.com/rikubrandt/ot-tehtavat/blob/main/laskarit/viikko1/komentorivi.txt)
 
+viikko1 teht16 muutos
+
