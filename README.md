@@ -6,7 +6,7 @@ Tavallista tekstiä.
 *Kursivoitua tekstiä*
 
 ## Viikko 1
-(gitlog)[https://github.com/rikubrandt/ot-tehtavat/blob/main/laskarit/viikko1/gitlog.txt] 
+[gitlog](https://github.com/rikubrandt/ot-tehtavat/blob/main/laskarit/viikko1/gitlog.txt) 
 
-(komentorivi)[https://github.com/rikubrandt/ot-tehtavat/blob/main/laskarit/viikko1/komentorivi.txt] 
+[komentorivi](https://github.com/rikubrandt/ot-tehtavat/blob/main/laskarit/viikko1/komentorivi.txt)
 
