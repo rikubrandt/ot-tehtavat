@@ -14,5 +14,5 @@ viikko1 teht16 muutos
 viikko1 teht17 muutos local
 
 ## Viikko 2
-[viikko2 ]((https://github.com/rikubrandt/ot-tehtavat/blob/main/laskarit/viikko2) 
+[viikko2 ](https://github.com/rikubrandt/ot-tehtavat/blob/main/laskarit/viikko2) 
 
