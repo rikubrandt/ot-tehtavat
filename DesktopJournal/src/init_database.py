@@ -4,21 +4,21 @@ from db_connection import get_database_connection
 
 def clear_tables(conn):
     cursor = conn.cursor()
-    cursor.execute("""
-    DROP TABLE IF EXISTS notes CASCADE;
-    DROP TABLE IF EXISTS tags CASCADE;
-    DROP TABLE IF EXISTS note_tags CASCADE;
+    cursor.executescript("""
+    DROP TABLE IF EXISTS notes;
+    DROP TABLE IF EXISTS tags;
+    DROP TABLE IF EXISTS note_tags;
     """)
     conn.commit()
 
 def init_tables(conn):
     cursor = conn.cursor()
-    cursor.execute("""
+    cursor.executescript("""
     CREATE TABLE notes(
     id SERIAL PRIMARY KEY,
     text TEXT,
     time TIMESTAMP,
-    visible BOOLEAN DEFAULT TRUE,
+    visible BOOLEAN DEFAULT TRUE
     )
 
     CREATE TABLE tags(
@@ -34,12 +34,18 @@ def init_tables(conn):
     """)
     conn.commit()
 
+def execute_sql_file(file, conn):
+    cursor = conn.cursor()
+    sql_file = open(file)
+    file = sql_file.read()
+    cursor.executescript(file)
+    conn.commit()
+    
 def init_db():
     conn = get_database_connection()
-    clear_tables()
-    init_tables()
+    execute_sql_file("schema.sql", conn)
+    execute_sql_file("populate.sql", conn)
 
 
 if __name__ == "__main__":
     init_db()
-    
