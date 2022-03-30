@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "desktopjournal"
+version = "0.1.0"
+description = ""
+authors = ["Riku Brandt <brandtriku@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pylint = "^2.13.3"
+coverage = "^6.3.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
