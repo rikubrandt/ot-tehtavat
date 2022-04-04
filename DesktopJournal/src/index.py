@@ -1,16 +1,17 @@
 
-from repositories.notes_repository import NotesRepository
+from services.notes_service import NotesService
 from db_connection import get_database_connection
 
-from ui.main_ui import MainUi
+#from ui.main_ui import MainUI
 
 
 def main():
-    conn = get_database_connection()
-    n = NotesRepository(conn)
-    rows = n.get_all_notes()
+
+    # Gui not done this has to do.
+    n = NotesService()
+    rows = n.get_notes()
     for row in rows:
-        print(row["id"])
+        print(row["id"], row["text"])
 
 if __name__ == "__main__":
     main()

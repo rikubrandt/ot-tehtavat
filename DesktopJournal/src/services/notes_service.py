@@ -8,7 +8,7 @@ from entities.note import Note
 
 class NotesService:
 
-    def __init__(self, notes_repository):
+    def __init__(self):
         self.connection = get_database_connection()
         self.notes_repository = NotesRepository(self.connection)
 
