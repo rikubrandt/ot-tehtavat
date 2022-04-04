@@ -1,5 +1,5 @@
 
-
+import datetime
 
 
 class NotesRepository:
@@ -14,16 +14,18 @@ class NotesRepository:
         return rows
 
 
-    def add_note(self, text, tags):
+    def add_note(self, note):
+        text = note.text
+
         cursor = self.connection.cursor()
-        cursor.execute("""
-        INSERT INTO notes(text, time) VALUES(?, DateTime("now"))
-        """, text)
+        id = cursor.execute("""
+        INSERT INTO notes (text, time) VALUES(?, ?);
+        """, (text, datetime.datetime.now()))
         
         #TODO insert tags
-        if tags:
+        if note.tags:
             pass
         
         self.connection.commit()
-
+        return cursor.lastrowid
     
