@@ -18,14 +18,26 @@ class NotesRepository:
         text = note.text
 
         cursor = self.connection.cursor()
-        id = cursor.execute("""
+        cursor.execute("""
         INSERT INTO notes (text, time) VALUES(?, ?);
         """, (text, datetime.datetime.now()))
-        
-        #TODO insert tags
+        id = cursor.lastrowid
         if note.tags:
-            pass
-        
+            for tag in note.tags:
+                cursor.execute("SELECT EXISTS(SELECT id FROM tags WHERE name = ?)", (tag,))
+                tag_id = cursor.fetchone()
+
+                if tag_id[0] == 0:
+                    cursor.execute("INSERT INTO tags(name) VALUES (?)", (tag,))
+                    tag_id = cursor.lastrowid
+                    
+                cursor.execute("INSERT INTO note_tags(note_id, tag_id) VALUES (?, ?)", (id, tag_id))
+
         self.connection.commit()
         return cursor.lastrowid
     
+    def get_all_tags(self):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT id, name FROM tags")
+        rows = cursor.fetchall()
+        return rows
