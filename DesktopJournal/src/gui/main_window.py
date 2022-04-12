@@ -17,16 +17,21 @@ class MainWindow(QMainWindow, Ui_Notes):
         self.textfield = self.findChild(QTextEdit, "textEdit")
         self.listview = self.findChild(QListWidget, "listWidget")
 
-        notes = self.setupNotes()
+        self.add_button.clicked.connect(self.add_note)
 
-        self.showNotes(notes)
+        self.show_notes()
 
-    def setupNotes(self):
+    def setup_notes(self):
         return self.note_service.get_notes()
 
-    def showNotes(self, notes):
+    def show_notes(self):
+        self.listview.clear()
+        notes = self.setup_notes()
         for row in notes:
             self.listview.addItem(row["time"]+" "+row["text"])
 
-    def addNote(self):
-        pass
+    def add_note(self):
+        text = self.textfield.toPlainText()
+        self.note_service.create_note(text)
+        self.show_notes()
+        self.textfield.clear()
