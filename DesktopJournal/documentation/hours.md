@@ -6,3 +6,6 @@
 
 ### Week 3
 4 hours
+
+### Week 4
+5 hours
