@@ -35,7 +35,7 @@ class NotesRepository:
                     "INSERT INTO note_tags(note_id, tag_id) VALUES (?, ?)", (id, tag_id))
 
         self.connection.commit()
-        return cursor.lastrowid
+        return id
 
     def get_all_tags(self):
         cursor = self.connection.cursor()

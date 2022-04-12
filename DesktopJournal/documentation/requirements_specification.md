@@ -6,9 +6,9 @@ With this software user can write daily notes to him/herself easily without extr
 Software only has one user.
 
 ## Functionality
-- User can add new notes.
+- User can add new notes. CHECK
 - Delete notes
-- Software automatically tags timestamp to notes.
+- Software automatically tags timestamp to notes. CHECK
 - User can search notes based on keywords and tags.
-- With #-sign user can tag their notes.
+- With #-sign user can tag their notes. CHECK
 
