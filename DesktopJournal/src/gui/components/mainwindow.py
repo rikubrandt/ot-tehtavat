@@ -40,5 +40,6 @@ class Ui_Notes(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("Desktop Journal", "Desktop Journal"))
+        MainWindow.setWindowTitle(_translate(
+            "Desktop Journal", "Desktop Journal"))
         self.pushButton.setText(_translate("MainWindow", "Add note"))

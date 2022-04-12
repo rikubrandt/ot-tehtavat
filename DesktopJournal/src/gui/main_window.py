@@ -5,8 +5,6 @@ from PyQt5.QtWidgets import *
 from gui.components.mainwindow import Ui_Notes
 
 
-
-
 class MainWindow(QMainWindow, Ui_Notes):
     def __init__(self, note_service):
         super().__init__()

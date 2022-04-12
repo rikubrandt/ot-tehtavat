@@ -2,13 +2,15 @@
 from db_connection import get_database_connection
 import os
 
+
 def execute_sql_file(file, conn):
     cursor = conn.cursor()
     sql_file = open(file)
     file = sql_file.read()
     cursor.executescript(file)
     conn.commit()
-    
+
+
 def init_db():
     path = os.path.dirname(__file__)
     conn = get_database_connection()
