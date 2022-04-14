@@ -19,34 +19,43 @@ class MainWindow(QMainWindow, Ui_Notes):
 
         self.add_button.clicked.connect(self.add_note)
         self.delete_button.clicked.connect(self.delete_note)
-
-        self.show_notes()
+        self.search_button.clicked.connect(self.search)
+        self.show_notes(self.setup_notes())
 
     def setup_notes(self):
         return self.note_service.get_notes()
 
-    def show_notes(self):
+    def show_notes(self, notes):
         self.listview.clear()
-        notes = self.setup_notes()
-        for row in notes:
-            item = QListWidgetItem(row["time"]+" "+row["text"])
-            item.setData(Qt.UserRole, row["id"])
-            self.listview.addItem(item)
+        if notes is not None:
+            for row in notes:
+                item = QListWidgetItem(row["time"]+" "+row["text"])
+                item.setData(Qt.UserRole, row["id"])
+                self.listview.addItem(item)
 
     def add_note(self):
         text = self.textfield.toPlainText()
         self.note_service.create_note(text)
-        self.show_notes()
+        self.show_notes(self.setup_notes())
         self.textfield.clear()
 
     def delete_note(self):
         note = self.listview.selectedItems()[0]
         id = int(note.data(Qt.UserRole))
         self.note_service.delete_note(id)
-        self.show_notes()
+        self.show_notes(self.setup_notes())
         
 
     def search(self):
-        #TODO
-        pass
+        text = self.textfield.toPlainText()
+        if text and not text.isspace():
+
+            #Search for tag
+            if len(text.split()) == 1 and text[0] == "#":
+                print("Kyl")
+                self.show_notes(self.note_service.search_by_tag(text))
+            else:
+                self.show_notes(self.note_service.search_by_keyword(text))
+        else:
+            self.show_notes(self.setup_notes())
 

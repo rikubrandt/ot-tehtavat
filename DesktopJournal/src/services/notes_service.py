@@ -30,3 +30,9 @@ class NotesService:
 
     def delete_note(self, id):
         return self.notes_repository.delete_note(id)
+    
+    def search_by_tag(self, tag):
+        return self.notes_repository.get_notes_by_tag(tag)
+
+    def search_by_keyword(self, keyword):
+        return self.notes_repository.get_notes_by_keyword(keyword)
