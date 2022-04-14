@@ -18,14 +18,20 @@ class Ui_Notes(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(660, 490, 131, 51))
+        self.pushButton.setGeometry(QtCore.QRect(660, 470, 121, 31))
         self.pushButton.setObjectName("pushButton")
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(0, 470, 651, 75))
+        self.textEdit.setGeometry(QtCore.QRect(0, 470, 651, 71))
         self.textEdit.setObjectName("textEdit")
         self.listWidget = QtWidgets.QListWidget(self.centralwidget)
-        self.listWidget.setGeometry(QtCore.QRect(0, 0, 791, 461))
+        self.listWidget.setGeometry(QtCore.QRect(0, 30, 791, 431))
         self.listWidget.setObjectName("listWidget")
+        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.setGeometry(QtCore.QRect(660, 510, 121, 31))
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_3.setGeometry(QtCore.QRect(670, 0, 121, 27))
+        self.pushButton_3.setObjectName("pushButton_3")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 27))
@@ -40,6 +46,7 @@ class Ui_Notes(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate(
-            "Desktop Journal", "Desktop Journal"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "Add note"))
+        self.pushButton_2.setText(_translate("MainWindow", "Search"))
+        self.pushButton_3.setText(_translate("MainWindow", "Delete"))
