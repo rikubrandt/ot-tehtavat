@@ -12,10 +12,13 @@ class MainWindow(QMainWindow, Ui_Notes):
 
         self.note_service = note_service
         self.add_button = self.findChild(QPushButton, "pushButton")
+        self.search_button = self.findChild(QPushButton, "pushButton_2")
+        self.delete_button = self.findChild(QPushButton, "pushButton_3")
         self.textfield = self.findChild(QTextEdit, "textEdit")
         self.listview = self.findChild(QListWidget, "listWidget")
 
         self.add_button.clicked.connect(self.add_note)
+        self.delete_button.clicked.connect(self.delete_note)
 
         self.show_notes()
 
@@ -26,10 +29,24 @@ class MainWindow(QMainWindow, Ui_Notes):
         self.listview.clear()
         notes = self.setup_notes()
         for row in notes:
-            self.listview.addItem(row["time"]+" "+row["text"])
+            item = QListWidgetItem(row["time"]+" "+row["text"])
+            item.setData(Qt.UserRole, row["id"])
+            self.listview.addItem(item)
 
     def add_note(self):
         text = self.textfield.toPlainText()
         self.note_service.create_note(text)
         self.show_notes()
         self.textfield.clear()
+
+    def delete_note(self):
+        note = self.listview.selectedItems()[0]
+        id = int(note.data(Qt.UserRole))
+        self.note_service.delete_note(id)
+        self.show_notes()
+        
+
+    def search(self):
+        #TODO
+        pass
+

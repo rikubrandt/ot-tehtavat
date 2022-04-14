@@ -27,3 +27,6 @@ class NotesService:
 
     def get_notes_based_on_tag(self, tag):
         return self.notes_repository.get_notes_by_tag(tag)
+
+    def delete_note(self, id):
+        return self.notes_repository.delete_note(id)

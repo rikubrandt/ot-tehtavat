@@ -54,3 +54,8 @@ class NotesRepository:
                             WHERE n.id = nt.note_id AND nt.tag_id = ?""", (tag_id[0],))
             return cursor.fetchall()
         return None
+
+    def delete_note(self, id):
+        cursor = self.connection.cursor()
+        cursor.execute("UPDATE notes SET visible = FALSE WHERE id = ?", (id,))
+        self.connection.commit()
