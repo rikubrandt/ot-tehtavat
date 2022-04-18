@@ -3,7 +3,7 @@ INSERT INTO tags (name) VALUES ("idea");
 INSERT INTO tags (name) VALUES ("question");
 INSERT INTO tags (name) VALUES ("answer");
 
-INSERT INTO notes(text, time) VALUES ("This is a note", DateTime("now"));
+INSERT INTO notes(text, time) VALUES ("This is a note1", DateTime("now"));
 INSERT INTO notes(text, time) VALUES ("This is a note2", DateTime("now"));
 INSERT INTO notes(text, time) VALUES ("This is a note3", DateTime("now"));
 INSERT INTO notes(text, time) VALUES ("This is a note4", DateTime("now"));

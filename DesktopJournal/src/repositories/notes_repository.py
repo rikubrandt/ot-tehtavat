@@ -58,12 +58,11 @@ class NotesRepository:
 
     def get_notes_by_keyword(self, keyword):
         cursor = self.connection.cursor()
-        cursor.execute("SELECT id, text, time FROM notes WHERE text LIKE ?", ("%"+keyword+"%",))
+        cursor.execute(
+            "SELECT id, text, time FROM notes WHERE text LIKE ?", ("%"+keyword+"%",))
         return cursor.fetchall()
 
     def delete_note(self, id):
         cursor = self.connection.cursor()
         cursor.execute("UPDATE notes SET visible = FALSE WHERE id = ?", (id,))
         self.connection.commit()
-
-    

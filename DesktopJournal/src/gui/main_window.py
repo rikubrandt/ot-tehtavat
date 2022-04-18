@@ -44,17 +44,15 @@ class MainWindow(QMainWindow, Ui_Notes):
         id = int(note.data(Qt.UserRole))
         self.note_service.delete_note(id)
         self.show_notes(self.setup_notes())
-        
 
     def search(self):
         text = self.textfield.toPlainText()
         if text and not text.isspace():
 
-            #Search for tag
+            # Search for tag
             if len(text.split()) == 1 and text[0] == "#":
                 self.show_notes(self.note_service.search_by_tag(text))
             else:
                 self.show_notes(self.note_service.search_by_keyword(text))
         else:
             self.show_notes(self.setup_notes())
-
