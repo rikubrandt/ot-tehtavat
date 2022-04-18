@@ -7,8 +7,8 @@ Software only has one user.
 
 ## Functionality
 - User can add new notes. CHECK
-- Delete notes
+- Delete notes CHECK
 - Software automatically tags timestamp to notes. CHECK
-- User can search notes based on keywords and tags.
+- User can search notes based on keywords and tags. CHECK
 - With #-sign user can tag their notes. CHECK
 
