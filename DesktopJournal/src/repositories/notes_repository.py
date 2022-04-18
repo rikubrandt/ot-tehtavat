@@ -24,13 +24,14 @@ class NotesRepository:
         if note.tags:
             for tag in note.tags:
                 cursor.execute(
-                    "SELECT EXISTS(SELECT id FROM tags WHERE name = ?)", (tag,))
+                    "SELECT id FROM tags WHERE name = ?", (tag,))
                 tag_id = cursor.fetchone()
 
-                if tag_id[0] == 0:
+                if tag_id is None:
                     cursor.execute("INSERT INTO tags(name) VALUES (?)", (tag,))
                     tag_id = cursor.lastrowid
-
+                else:
+                    tag_id = tag_id["id"]
                 cursor.execute(
                     "INSERT INTO note_tags(note_id, tag_id) VALUES (?, ?)", (id, tag_id))
 
@@ -51,7 +52,7 @@ class NotesRepository:
 
         if tag_id:
             cursor.execute("""SELECT n.id, n.text, n.time FROM notes n, note_tags nt
-                            WHERE n.id = nt.note_id AND nt.tag_id = ?""", (tag_id[0],))
+                            WHERE n.id = nt.note_id AND n.visible = TRUE AND nt.tag_id = ?""", (tag_id[0],))
             return cursor.fetchall()
         return None
 

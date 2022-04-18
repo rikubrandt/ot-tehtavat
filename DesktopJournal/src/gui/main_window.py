@@ -52,7 +52,6 @@ class MainWindow(QMainWindow, Ui_Notes):
 
             #Search for tag
             if len(text.split()) == 1 and text[0] == "#":
-                print("Kyl")
                 self.show_notes(self.note_service.search_by_tag(text))
             else:
                 self.show_notes(self.note_service.search_by_keyword(text))
