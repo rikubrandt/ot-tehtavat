@@ -9,3 +9,9 @@
 
 ### Week 4
 5 hours
+
+### Week 5
+4 Hours
+- User can now delete and search notes.
+- Added more tests
+- Fixed bug in adding note with already given tag.
