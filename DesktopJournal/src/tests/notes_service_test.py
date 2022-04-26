@@ -15,7 +15,7 @@ class TestNotesService(unittest.TestCase):
         num = 1
         for note in notes:
             self.assertEqual(note["text"], "This is a note"+str(num))
-            num+=1
+            num += 1
 
     def test_get_tags(self):
         tags = self.notes_service.get_tags()
@@ -38,8 +38,8 @@ class TestNotesService(unittest.TestCase):
         num = 2
         for note in notes:
             self.assertEqual(note["text"], "This is a note"+str(num))
-            num+=1
-            
+            num += 1
+
     def test_creating_new_note_id(self):
         new_note_id = self.notes_service.create_note("Test #test")
         self.assertEqual(new_note_id, 5)

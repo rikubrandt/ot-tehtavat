@@ -20,7 +20,7 @@ class NotesRepository:
         cursor.execute("""
         INSERT INTO notes (text, time) VALUES(?, ?);
         """, (text, datetime.datetime.now()))
-        id = cursor.lastrowid
+        note_id = cursor.lastrowid
         if note.tags:
             for tag in note.tags:
                 cursor.execute(
@@ -33,10 +33,10 @@ class NotesRepository:
                 else:
                     tag_id = tag_id["id"]
                 cursor.execute(
-                    "INSERT INTO note_tags(note_id, tag_id) VALUES (?, ?)", (id, tag_id))
+                    "INSERT INTO note_tags(note_id, tag_id) VALUES (?, ?)", (note_id, tag_id))
 
         self.connection.commit()
-        return id
+        return note_id
 
     def get_all_tags(self):
         cursor = self.connection.cursor()
@@ -52,7 +52,8 @@ class NotesRepository:
 
         if tag_id:
             cursor.execute("""SELECT n.id, n.text, n.time FROM notes n, note_tags nt
-                            WHERE n.id = nt.note_id AND n.visible = TRUE AND nt.tag_id = ?""", (tag_id[0],))
+                            WHERE n.id = nt.note_id AND n.visible = TRUE
+                             AND nt.tag_id = ?""", (tag_id[0],))
             return cursor.fetchall()
         return None
 
@@ -62,7 +63,8 @@ class NotesRepository:
             "SELECT id, text, time FROM notes WHERE text LIKE ?", ("%"+keyword+"%",))
         return cursor.fetchall()
 
-    def delete_note(self, id):
+    def delete_note(self, note_id):
         cursor = self.connection.cursor()
-        cursor.execute("UPDATE notes SET visible = FALSE WHERE id = ?", (id,))
+        cursor.execute(
+            "UPDATE notes SET visible = FALSE WHERE id = ?", (note_id,))
         self.connection.commit()

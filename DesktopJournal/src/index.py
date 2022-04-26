@@ -1,10 +1,9 @@
 
 import sys
-from services.notes_service import NotesService
-from db_connection import get_database_connection
 from PyQt5.QtWidgets import QApplication
-
 from gui.main_window import MainWindow
+
+from services.notes_service import NotesService
 
 
 def main():

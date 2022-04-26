@@ -1,11 +1,10 @@
-
-from db_connection import get_database_connection
 import os
+from db_connection import get_database_connection
 
 
 def execute_sql_file(file, conn):
     cursor = conn.cursor()
-    sql_file = open(file)
+    sql_file = open(file, encoding="utf_8")
     file = sql_file.read()
     cursor.executescript(file)
     conn.commit()
