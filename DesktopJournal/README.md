@@ -1,8 +1,12 @@
 # Desktop Journal - Harkkatyö
 
 ## Starting the program
-Run ´poetry run python3 init_database.py´ to initialize the database for the project. 
-Then run ´poetry run invoke start´ to start the program.
+Run `poetry run python3 init_database.py` to initialize the database for the project. 
+Then run `poetry run invoke start` to start the program.
+
+## Release
+
+[Week 5 Release](https://github.com/rikubrandt/ot-tehtavat/releases/tag/week5)
 
 ## Documentation
 [Time tracking](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/hours.md) 
