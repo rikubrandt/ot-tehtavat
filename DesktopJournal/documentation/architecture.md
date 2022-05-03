@@ -18,15 +18,15 @@ For example:
 - `delete_note`
 - `search_by_tag`
 
-NoteService object calls NoteRepository object that is responsible for performing database related queries.
+NotesService object calls NotesRepository object that is responsible for performing database related queries.
 
 ![Architecture](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/pictures/architecture.png)
 
 
 ## Saving of information
-NoteRepository class is responsible for saving and retrieving the information from the sqlite database.
+NotesRepository class is responsible for saving and retrieving the information from the sqlite database.
 
-NoteService also has a method called export_notes that can backup the notes to a .txt file.
+NotesService also has a method called export_notes that can backup the notes to a .txt file.
 
 ## Main functions.
 

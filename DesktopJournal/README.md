@@ -16,3 +16,5 @@ Then run `poetry run invoke start` to start the program.
 [Architecture](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/architecture.md)
 
 [Changelog](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/changelog.md)
+
+[Instructions](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/instructions.md)

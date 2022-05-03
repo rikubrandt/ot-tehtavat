@@ -1,13 +1,11 @@
 # Ohjelmistotekniikka 2022 Spring 
 ### Riku Brandt
 
-Tavallista tekstiä.
-**Lihavoitua tekstiä**
-*Kursivoitua tekstiä*
+# Harkkatyön README täällä
 
-## Harkkatyö
-[Vaatimusmäärittely](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/requirements_specification.md)
-[Työaikakirjanpito](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/hours.md)
+[README](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/README.md)
+
+
 
 ## Viikko 1
 [gitlog](https://github.com/rikubrandt/ot-tehtavat/blob/main/laskarit/viikko1/gitlog.txt) 
