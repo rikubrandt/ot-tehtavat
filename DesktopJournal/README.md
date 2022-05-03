@@ -8,6 +8,8 @@ Then run `poetry run invoke start` to start the program.
 
 [Week 5 Release](https://github.com/rikubrandt/ot-tehtavat/releases/tag/week5)
 
+[Week 6 Release](https://github.com/rikubrandt/ot-tehtavat/releases/tag/week6)
+
 ## Documentation
 [Time tracking](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/hours.md) 
 
