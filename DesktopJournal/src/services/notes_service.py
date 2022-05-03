@@ -33,3 +33,15 @@ class NotesService:
 
     def search_by_keyword(self, keyword):
         return self.notes_repository.get_notes_by_keyword(keyword)
+
+
+    def export_notes(self, path):
+        notes = self.notes_repository.get_all_notes()
+        string_notes = ""
+        for row in notes:
+            note = "{timestamp} {text} \n".format(timestamp=row[2], text=row[1])
+            string_notes += note
+            
+        file = open(path, "w")
+        file.write(string_notes)
+        file.close()

@@ -32,6 +32,9 @@ class Ui_Notes(object):
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_3.setGeometry(QtCore.QRect(670, 0, 121, 27))
         self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_4.setGeometry(QtCore.QRect(0, 0, 93, 27))
+        self.pushButton_4.setObjectName("pushButton_4")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 27))
@@ -46,8 +49,8 @@ class Ui_Notes(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate(
-            "Desktop Journal", "Desktop Journal"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "Add note"))
         self.pushButton_2.setText(_translate("MainWindow", "Search"))
-        self.pushButton_3.setText(_translate("MainWindow", "Delete"))
+        self.pushButton_3.setText(_translate("MainWindow", "Delete selected"))
+        self.pushButton_4.setText(_translate("MainWindow", "Export to txt"))
