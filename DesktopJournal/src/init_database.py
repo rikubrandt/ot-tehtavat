@@ -10,10 +10,10 @@ def execute_sql_file(file, conn):
         conn: Connection to the database.
     """
     cursor = conn.cursor()
-    sql_file = open(file, encoding="utf_8")
-    file = sql_file.read()
-    cursor.executescript(file)
-    conn.commit()
+    with open(file, encoding="utf_8") as sql_file:
+        file = sql_file.read()
+        cursor.executescript(file)
+        conn.commit()
 
 
 def init_db():

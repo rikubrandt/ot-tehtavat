@@ -6,7 +6,8 @@
 # A comma-separated list of package or module names from where C extensions may
 # be loaded. Extensions are loading into the active Python interpreter and may
 # run arbitrary code.
-extension-pkg-whitelist=
+#Added this because https://stackoverflow.com/questions/56726580/no-name-qapplication-in-module-pyqt5-qtwidgets-error-in-pylint
+extension-pkg-whitelist=PyQt5
 
 # Specify a score threshold to be exceeded before program exits with error.
 fail-under=10.0

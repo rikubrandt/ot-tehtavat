@@ -69,6 +69,6 @@ class MainWindow(QMainWindow, Ui_Notes):
         export_dialog.setAcceptMode(QFileDialog.AcceptSave)
         export_dialog.setNameFilter(filter)
         export_dialog.setDefaultSuffix('txt')
-        
+
         if export_dialog.exec_() == QFileDialog.Accepted:
             self.note_service.export_notes(export_dialog.selectedFiles()[0])

@@ -78,7 +78,7 @@ class NotesRepository:
         Returns:
             notes: All notes that have the given tag.
         """
-    
+
         cursor = self.connection.cursor()
 
         cursor.execute("SELECT id FROM tags WHERE name = ?", (tag[1:],))

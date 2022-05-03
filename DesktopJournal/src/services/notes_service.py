@@ -77,7 +77,6 @@ class NotesService:
         """
         return self.notes_repository.get_notes_by_keyword(keyword)
 
-
     def export_notes(self, path):
         """Writes all the notes in the database to text file and saves it as txt.
 
@@ -87,9 +86,9 @@ class NotesService:
         notes = self.notes_repository.get_all_notes()
         string_notes = ""
         for row in notes:
-            note = "{timestamp} {text} \n".format(timestamp=row[2], text=row[1])
+            note = f"{row[2]} {row[1]} \n"
             string_notes += note
 
-        file = open(path, "w")
-        file.write(string_notes)
-        file.close()
+        with open(path, "w", encoding="utf_8") as file:
+            file.write(string_notes)
+            file.close()
