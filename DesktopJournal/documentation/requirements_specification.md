@@ -11,4 +11,4 @@ Software only has one user.
 - Software automatically tags timestamp to notes. CHECK
 - User can search notes based on keywords and tags. CHECK
 - With #-sign user can tag their notes. CHECK
-- User can backup their journal to a text file. 
+- User can backup their journal to a text file. CHECK

@@ -15,3 +15,9 @@
 - User can now delete and search notes.
 - Added more tests
 - Fixed bug in adding note with already given tag.
+
+### Week 6
+6 Hours.
+- Added docstrings.
+- User can export notes to .txt file.
+- More documentation in architecture file.

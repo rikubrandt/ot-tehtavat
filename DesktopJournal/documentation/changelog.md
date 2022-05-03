@@ -13,3 +13,8 @@
 - User can search note by keyoword or tag.
 - User can delete notes.
 - Added more tests.
+
+### Week 6
+- User can export the notes to .txt file.
+- Added instructions
+- More documentation in architecture file.
