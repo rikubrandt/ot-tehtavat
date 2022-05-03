@@ -3,17 +3,37 @@ import datetime
 
 
 class NotesRepository:
+    """Class that is responsible for operations to the database.
+    """
 
     def __init__(self, connection):
+        """Initializes the connetion to database
+
+        Args:
+            connection: Sqlite3 database connection.
+        """
         self.connection = connection
 
     def get_all_notes(self):
+        """Returns all visible notes
+
+        Returns:
+            rows: Sqlite3 object containing all notes.
+        """
         cursor = self.connection.cursor()
         cursor.execute("SELECT id, text, time FROM notes WHERE visible = 1")
         rows = cursor.fetchall()
         return rows
 
     def add_note(self, note):
+        """Adds new note to the database.
+
+        Args:
+            note: Note object
+
+        Returns:
+            note_id: Id of the created note.
+        """
         text = note.text
 
         cursor = self.connection.cursor()
@@ -39,12 +59,26 @@ class NotesRepository:
         return note_id
 
     def get_all_tags(self):
+        """Returns all created tags.
+
+        Returns:
+            rows: Sqlite3 object containing all tags.
+        """
         cursor = self.connection.cursor()
         cursor.execute("SELECT id, name FROM tags")
         rows = cursor.fetchall()
         return rows
 
     def get_notes_by_tag(self, tag):
+        """Returns all notes with given tag.
+
+        Args:
+            tag: Tag in string format
+
+        Returns:
+            notes: All notes that have the given tag.
+        """
+    
         cursor = self.connection.cursor()
 
         cursor.execute("SELECT id FROM tags WHERE name = ?", (tag[1:],))
@@ -58,12 +92,25 @@ class NotesRepository:
         return None
 
     def get_notes_by_keyword(self, keyword):
+        """Returns all notes with given keyword.
+
+        Args:
+            keyword: Keyword in string format
+
+        Returns:
+            notes: All notes that have the given keyword.
+        """
         cursor = self.connection.cursor()
         cursor.execute(
             "SELECT id, text, time FROM notes WHERE text LIKE ?", ("%"+keyword+"%",))
         return cursor.fetchall()
 
     def delete_note(self, note_id):
+        """Deletes the given note.
+
+        Args:
+            note_id: Id of the note to be deleted.
+        """
         cursor = self.connection.cursor()
         cursor.execute(
             "UPDATE notes SET visible = FALSE WHERE id = ?", (note_id,))

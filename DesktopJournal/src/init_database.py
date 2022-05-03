@@ -3,6 +3,12 @@ from db_connection import get_database_connection
 
 
 def execute_sql_file(file, conn):
+    """Executes given sql-files.
+
+    Args:
+        file: File's path.
+        conn: Connection to the database.
+    """
     cursor = conn.cursor()
     sql_file = open(file, encoding="utf_8")
     file = sql_file.read()
@@ -11,6 +17,8 @@ def execute_sql_file(file, conn):
 
 
 def init_db():
+    """Initializes the database tables.
+    """
     path = os.path.dirname(__file__)
     conn = get_database_connection()
     execute_sql_file(path + "/schema.sql", conn)
