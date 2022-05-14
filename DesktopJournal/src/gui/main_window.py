@@ -60,6 +60,8 @@ class MainWindow(QMainWindow, Ui_Notes):
             self.search_button.setText("Show Notes")
             text = self.textfield.toPlainText()
             self.show_notes(self.note_service.search(text))
+            self.textfield.setText("")
+
         else:
             self.search_button.setText("Search")
             self.textfield.setText("")

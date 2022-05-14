@@ -55,7 +55,6 @@ class NotesService:
         """
         self.notes_repository.delete_note(note_id)
 
-
     def search(self, text):
         """Returns search by keyword or search by tags based on the text.
 
@@ -65,7 +64,7 @@ class NotesService:
         # Search by tag if given one word that start with-#
         if len(text.split()) == 1 and text[0] == "#":
             return self.search_by_tag(text)
-            
+
         return self.search_by_keyword(text)
 
     def search_by_tag(self, tag):
