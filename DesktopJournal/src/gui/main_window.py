@@ -17,7 +17,7 @@ class MainWindow(QMainWindow, Ui_Notes):
         self.export_button = self.findChild(QPushButton, "pushButton_4")
         self.textfield = self.findChild(QTextEdit, "textEdit")
         self.listview = self.findChild(QListWidget, "listWidget")
-
+        self.listview.setWordWrap(True)
         self.add_button.clicked.connect(self.add_note)
         self.delete_button.clicked.connect(self.delete_note)
         self.search_button.clicked.connect(self.search)
@@ -39,6 +39,8 @@ class MainWindow(QMainWindow, Ui_Notes):
 
     def add_note(self):
         text = self.textfield.toPlainText()
+        if text == "":
+            return
         self.note_service.create_note(text)
         self.show_notes(self.setup_notes())
         self.textfield.clear()
