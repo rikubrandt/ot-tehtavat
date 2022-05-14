@@ -23,9 +23,5 @@ def init_db():
     conn = get_database_connection()
     execute_sql_file(path + "/schema.sql", conn)
 
-    # Adds some test data for now.
-    execute_sql_file(path + "/populate.sql", conn)
-
-
 if __name__ == "__main__":
     init_db()

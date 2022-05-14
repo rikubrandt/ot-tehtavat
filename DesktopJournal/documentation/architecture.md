@@ -28,7 +28,14 @@ NotesRepository class is responsible for saving and retrieving the information f
 
 NotesService also has a method called export_notes that can backup the notes to a .txt file.
 
-## Main functions.
+## Main functions
 
 ### Sequence diagram of adding new note
 ![Sequence](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/pictures/seq_add_note.png)
+
+### Displaying notes
+
+![ShowingNotes](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/pictures/showing_notes.png)
+
+### Searching notes by tag
+![Sequence](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/pictures/search_notes_by_tag.png)
