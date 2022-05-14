@@ -52,18 +52,14 @@ class MainWindow(QMainWindow, Ui_Notes):
         self.show_notes(self.setup_notes())
 
     def search(self):
-        if self.textfield.toPlainText() == "":
+        text = self.textfield.toPlainText()
+
+        if not text and text.isspace():
             return
         if self.search_button.text() == "Search":
             self.search_button.setText("Show Notes")
             text = self.textfield.toPlainText()
-            if text and not text.isspace():
-
-                # Search by tag
-                if len(text.split()) == 1 and text[0] == "#":
-                    self.show_notes(self.note_service.search_by_tag(text))
-                else:
-                    self.show_notes(self.note_service.search_by_keyword(text))
+            self.show_notes(self.note_service.search(text))
         else:
             self.search_button.setText("Search")
             self.textfield.setText("")
