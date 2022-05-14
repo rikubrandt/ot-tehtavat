@@ -1,12 +1,12 @@
 import unittest
 from services.notes_service import NotesService
-from init_database import init_db
+from init_database import init_test_db
 
 
-class TestNotesService(unittest.TestCase):
+class TestNotes(unittest.TestCase):
 
     def setUp(self):
-        init_db()
+        init_test_db()
         self.notes_service = NotesService()
 
     def test_get_notes(self):

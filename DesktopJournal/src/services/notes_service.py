@@ -2,7 +2,7 @@
 from repositories.notes_repository import NotesRepository
 from db_connection import get_database_connection
 from entities.note import Note
-
+from init_database import init_db
 
 class NotesService:
     """Class that is responsible for the logic operations.
@@ -13,6 +13,7 @@ class NotesService:
         and creates NotesRepository object.
         """
         self.connection = get_database_connection()
+        init_db()
         self.notes_repository = NotesRepository(self.connection)
 
     def create_note(self, content):
