@@ -13,7 +13,6 @@ class NotesService:
         and creates NotesRepository object.
         """
         self.connection = get_database_connection()
-        init_db()
         self.notes_repository = NotesRepository(self.connection)
 
     def create_note(self, content):

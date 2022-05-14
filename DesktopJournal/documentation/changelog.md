@@ -18,3 +18,10 @@
 - User can export the notes to .txt file.
 - Added instructions
 - More documentation in architecture file.
+
+
+### Week 7
+- Mode ui more responsive
+- Fixed tests to use own database
+- New release
+- Updated changelog

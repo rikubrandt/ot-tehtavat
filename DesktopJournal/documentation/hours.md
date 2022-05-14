@@ -21,3 +21,10 @@
 - Added docstrings.
 - User can export notes to .txt file.
 - More documentation in architecture file.
+
+### Week 7
+4 Hours.
+- Mode ui more responsive
+- Fixed tests to use own database
+- New release
+- Updated changelog
