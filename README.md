@@ -1,20 +1,22 @@
-# Ohjelmistotekniikka 2022 Spring 
-### Riku Brandt
+# Desktop Journal - Harkkatyö
 
-# Harkkatyön README täällä
+## Starting the program
+Run `poetry run python3 init_database.py` to initialize the database for the project. 
+Then run `poetry run invoke start` to start the program.
 
-[README](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/README.md)
+## Release
 
+[Week 5 Release](https://github.com/rikubrandt/ot-tehtavat/releases/tag/week5)
 
+[Week 6 Release](https://github.com/rikubrandt/ot-tehtavat/releases/tag/week6)
 
-## Viikko 1
-[gitlog](https://github.com/rikubrandt/ot-tehtavat/blob/main/laskarit/viikko1/gitlog.txt) 
+## Documentation
+[Time tracking](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/hours.md) 
 
-[komentorivi](https://github.com/rikubrandt/ot-tehtavat/blob/main/laskarit/viikko1/komentorivi.txt)
+[Requirements Specification](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/requirements_specification.md)
 
-viikko1 teht16 muutos
-viikko1 teht17 muutos local
+[Architecture](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/architecture.md)
 
-## Viikko 2
-[viikko2 ](https://github.com/rikubrandt/ot-tehtavat/blob/main/laskarit/viikko2) 
+[Changelog](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/changelog.md)
 
+[Instructions](https://github.com/rikubrandt/ot-tehtavat/blob/main/DesktopJournal/documentation/instructions.md)
