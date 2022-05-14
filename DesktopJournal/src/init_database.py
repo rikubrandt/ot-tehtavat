@@ -30,3 +30,5 @@ def init_test_db():
     execute_sql_file(path + "/empty_schema.sql", conn)
     execute_sql_file(path + "/populate.sql", conn)
 
+if __name__ == "__main__":
+    init_db()
