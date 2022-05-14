@@ -32,7 +32,8 @@ class MainWindow(QMainWindow, Ui_Notes):
         self.listview.clear()
         if notes is not None:
             for row in notes:
-                item = QListWidgetItem(row["time"]+" "+row["text"])
+                time = row["time"][:16]
+                item = QListWidgetItem(time + " " + row["text"])
                 item.setData(Qt.UserRole, row["id"])
                 self.listview.addItem(item)
 
